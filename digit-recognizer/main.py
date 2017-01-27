@@ -23,13 +23,14 @@ if __name__ == '__main__':
 
     model = Sequential()
 
-    model.add(Dense(800, input_dim=784, init="normal", activation="relu"))
+    model.add(Dense(1500, input_dim=784, init="normal", activation="relu"))
+    model.add(Dense(900, init="normal", activation="relu"))
     model.add(Dense(10, init="normal", activation="softmax"))
 
     model.compile(loss="categorical_crossentropy", optimizer="SGD",
                   metrics=["accuracy"])
 
-    model.fit(X_train, y_train, batch_size=200, nb_epoch=100,
+    model.fit(X_train, y_train, batch_size=100, nb_epoch=150,
               validation_split=0.2, verbose=1)
 
     predicts = model.predict_classes(X_test, verbose=1)
