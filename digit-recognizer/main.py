@@ -10,7 +10,6 @@ from keras.utils import np_utils
 
 if __name__ == '__main__':
     np.random.seed(42)
-    (X_train1, y_train1), (X_test1, y_test1) = mnist.load_data()
 
     train = pd.read_csv('Data/train.csv')
     labels = train.ix[:, 0].values.astype('int32')
